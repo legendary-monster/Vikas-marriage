@@ -28,6 +28,7 @@ body {
     width: 100%;
     max-width: 900px;
     box-sizing: border-box;
+    padding-top: 10%;
 }
 
 .head1 {
