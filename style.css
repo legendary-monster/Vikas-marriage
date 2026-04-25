@@ -8,25 +8,30 @@ html, body {
 
 /* Background covers full screen */
 body {
-    font-family: 'Georgia', serif;
+ font-family: 'Georgia', serif;
     background: linear-gradient(to right, #ffecd2, #fcb69f);
     text-align: center;
     min-height: 100vh;   /* full viewport height */
-    display: flex;      /* allow natural top-to-bottom flow */
-    flex-direction: column; /* stack content top to bottom */
-    align-items: center;    /* center horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* center vertically */
+    align-items: center;      /* center horizontally */
 }
 
 /* Invitation box */
 .invitation {
-   background: url("background1.jpeg") no-repeat top center;
-    background-size: cover;   /* scale background image */
+    background: url("background1.jpeg") no-repeat top center;
+    background-size: cover;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     width: 100%;
-    max-width: 900px;         /* limit width on large screens */
+    max-width: 900px;
     box-sizing: border-box;
+}
+
+h2{
+    font-size:xx-large;
 }
 
 /* Map button */
@@ -96,7 +101,8 @@ h1 {
 /* Couple image animation */
 .couple-top {
     width: 50%;
-    margin: 0 auto 16px;
+    margin: 0 auto 0px;
+    margin-top: 20%;
     display: block;
     animation: floatUpDown 4s ease-in-out infinite;
 }
