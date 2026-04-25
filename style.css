@@ -30,6 +30,18 @@ body {
     box-sizing: border-box;
 }
 
+.head1 {
+    display: inline-block;          /* shrink to fit text */
+    background-color: rgba(255, 182, 193, 0.6); /* soft pink with transparency */
+    padding: 10px 20px;             /* space around text */
+    border-radius: 8px;             /* rounded corners */
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a2c2a;                 /* darker text for contrast */
+    text-shadow: 0 2px 6px rgba(255,255,255,0.4);
+}
+
+
 h2{
     font-size:xx-large;
 }
@@ -102,7 +114,6 @@ h1 {
 .couple-top {
     width: 50%;
     margin: 0 auto 0px;
-    margin-top: 20%;
     display: block;
     animation: floatUpDown 4s ease-in-out infinite;
 }
