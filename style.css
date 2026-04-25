@@ -1,42 +1,59 @@
+/* Reset and scaling */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Background covers full screen */
 body {
-  font-family: 'Georgia', serif;
-  background: linear-gradient(to right, #ffecd2, #fcb69f);
-  text-align: center;
-  padding: 50px;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    text-align: center;
+    min-height: 100vh;   /* full viewport height */
+    display: flex;      /* allow natural top-to-bottom flow */
+    flex-direction: column; /* stack content top to bottom */
+    align-items: center;    /* center horizontally */
 }
 
+/* Invitation box */
 .invitation {
-  background: url("background1.jpeg") no-repeat center center ;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-.map-button {
-  display: inline-block;
-  padding: 12px 24px;
-  /* margin-top: 20px; */
-  background: linear-gradient(135deg, #c897b8, #8e5a7d);
-  color: #fff;
-  font-family: 'Georgia', serif;
-  font-size: 18px;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: transform 0.2s, background 0.3s;
+   background: url("background1.jpeg") no-repeat top center;
+    background-size: cover;   /* scale background image */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 900px;         /* limit width on large screens */
+    box-sizing: border-box;
 }
 
-.map-button:hover{
+/* Map button */
+.map-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #c897b8, #8e5a7d);
+    color: #fff;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background 0.3s;
+}
+.map-button:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
+/* Date section */
 .date-section {
     display: flex;
     justify-content: center;
     gap: 30px;
     margin-top: 20px;
 }
-
 .date-box {
     background: linear-gradient(135deg, #ffe4e1, #fff0f5);
     border: 2px solid #b22222;
@@ -50,12 +67,12 @@ body {
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .date-box:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(-2deg);
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
+/* Countdown styling */
 #marriage-countdown, #reception-countdown {
     margin-top: 10px;
     font-size: 20px;
@@ -63,69 +80,72 @@ body {
     font-weight: bold;
     animation: glow 1.5s infinite alternate;
 }
-
 @keyframes glow {
     from { text-shadow: 0 0 5px #ff69b4; }
     to { text-shadow: 0 0 15px #ff1493; }
 }
 
-#countdown {
-    font-size: 22px;
-    margin-top: 15px;
-    color: #333;
-    font-weight: bold;
-}
-
+/* Heading */
 h1 {
-  color: #b22222;
+    color: #8A647C;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.45);
 }
 
+/* Couple image animation */
+.couple-top {
+    width: 50%;
+    margin: 0 auto 16px;
+    display: block;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+@keyframes floatUpDown {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Slideshow */
 .slideshow {
-  position: relative;
-  width: 400px;
-  height: 250px;
-  margin: 20px auto;
-  overflow: hidden;
-  border-radius: 10px;
+    position: relative;
+    width: 400px;
+    height: 250px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
 }
-
 .slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
-
 .slide.active {
-  opacity: 1;
+    opacity: 1;
 }
+
+/* Floating hearts */
 @keyframes float {
     0% { transform: translateY(0); opacity: 1; }
     50% { transform: translateY(-20px); opacity: 0.7; }
     100% { transform: translateY(0); opacity: 1; }
 }
-
 .floating-heart {
     position: absolute;
     font-size: 24px;
     color: #ff69b4;
     animation: float 4s ease-in-out infinite;
 }
-@keyframes float {
-    0% { transform: translateY(0); opacity: 1; }
-    50% { transform: translateY(-20px); opacity: 0.7; }
-    100% { transform: translateY(0); opacity: 1; }
-}
 
-.floating-heart {
-    position: absolute;
-    font-size: 24px;
-    color: #ff69b4;
-    animation: float 4s ease-in-out infinite;
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .date-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .date-box {
+        width: 90%;
+        margin-bottom: 20px;
+    }
 }
-.date-box:hover {
-    transform: scale(1.05) rotate(-2deg);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-
